@@ -1,0 +1,60 @@
+#loom-companion-mv3 {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+}
+
+.container {
+    max-width: 1490px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container--visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 578px;
+    height: 100%;
+}
+
+.left-side {
+    width: auto;
+    height: 100%;
+}
+
+
+.right-side img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 588px;
+}
+
+@media only screen and (max-width: 991px) {
+    .container--visual {
+        flex-direction: column;
+        max-height: 100%;
+        width: 100%;
+        max-width: 628px;
+    }
+
+    .left-side {
+        width: 100%;
+        transform: rotate(90deg);
+        transform-origin: center;
+    }
+}
