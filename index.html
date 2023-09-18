@@ -15,7 +15,7 @@
                 <g class="lines">
                     <path d="M681 295H536.778C527.942 295 520.778 287.837 520.778 279V103C520.778 94.1634 513.615 87 504.778 87H449" stroke="#DFDACE" stroke-width="3" stroke-linecap="round"/>
                     <path d="M681 295H464.778C455.942 295 448.778 287.837 448.778 279V203C448.778 194.163 441.615 187 432.778 187H189" stroke="#DFDACE" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M379 295H681" stroke="#DFDACE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M681 295L379 295" stroke="#DFDACE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M681 295H464.778C455.942 295 448.778 302.163 448.778 311V376C448.778 384.837 441.615 392 432.778 392H189" stroke="#DFDACE" stroke-width="3" stroke-linecap="round"/>                    
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M447.5 492C447.5 492.828 448.172 493.5 449 493.5H504.778C514.443 493.5 522.278 485.665 522.278 476V311C522.278 302.992 528.77 296.5 536.778 296.5H681C681.828 296.5 682.5 295.828 682.5 295C682.5 294.172 681.828 293.5 681 293.5H536.778C527.113 293.5 519.278 301.335 519.278 311V476C519.278 484.008 512.786 490.5 504.778 490.5H449C448.172 490.5 447.5 491.172 447.5 492Z" fill="#DFDACE"/>
                 </g>
@@ -24,39 +24,39 @@
                         <path d="M681 295H536.778C527.942 295 520.778 287.837 520.778 279V103C520.778 94.1634 513.615 87 504.778 87H449" stroke="#DFDACE" stroke-width="3" stroke-linecap="round"/>
                     </mask>
                     <g mask="url(#top-right)">
-                        <ellipse cx="430.5" cy="87" rx="16.5" ry="16" fill="#5C3FDD"/>
+                        <ellipse class="circle" cx="430.5" cy="87" rx="16.5" ry="16" fill="#5C3FDD"/>
                     </g>
                     <mask id="top-left" style="mask-type:alpha" maskUnits="userSpaceOnUse">
                         <path d="M681 295H464.778C455.942 295 448.778 287.837 448.778 279V203C448.778 194.163 441.615 187 432.778 187H189" stroke="#DFDACE" stroke-width="3" stroke-linecap="round"/>
                     </mask>
                     <g mask="url(#top-left)">
-                        <ellipse cx="170.5" cy="187" rx="16.5" ry="16" fill="#5C3FDD"/>
+                        <ellipse class="circle" cx="170.5" cy="187" rx="16.5" ry="16" fill="#5C3FDD"/>
                     </g>
                     <mask id="middle" style="mask-type:alpha" maskUnits="userSpaceOnUse">
-                        <path d="M379 295H681" stroke="#DFDACE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M681 295L379 295" stroke="#DFDACE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                     </mask>
                     <g mask="url(#middle)">
-                        <ellipse cx="360.5" cy="295" rx="16.5" ry="16" fill="#5C3FDD"/>
+                        <ellipse class="circle" cx="360.5" cy="295" rx="16.5" ry="16" fill="#5C3FDD"/>
                     </g>
                     <mask id="bottom-left" style="mask-type:alpha" maskUnits="userSpaceOnUse">
                         <path d="M681 295H464.778C455.942 295 448.778 302.163 448.778 311V376C448.778 384.837 441.615 392 432.778 392H189" stroke="#DFDACE" stroke-width="3" stroke-linecap="round"/>
                     </mask>
                     <g mask="url(#bottom-left)">
-                        <ellipse cx="170.5" cy="392" rx="16.5" ry="16" fill="#5C3FDD"/>
+                        <ellipse class="circle" cx="170.5" cy="392" rx="16.5" ry="16" fill="#5C3FDD"/>
                     </g>
                     <mask id="bottom-right" style="mask-type:alpha" maskUnits="userSpaceOnUse">
                         <path d="M681 295H536.778C527.942 295 520.778 302.163 520.778 311V476C520.778 484.837 513.615 492 504.778 492H449" stroke="#DFDACE" stroke-width="3" stroke-linecap="round"/>
                     </mask>
                     <g mask="url(#bottom-right)">
-                        <circle cx="431" cy="491" r="16" fill="#5C3FDD"/>
+                        <circle class="circle" cx="431" cy="491" r="16" fill="#5C3FDD"/>
                     </g>
                 </g>
-                <g class="icons">
-                    <rect x="329" y="29" width="120" height="120" fill="#D9D9D9" fill-opacity="0.5"/>
-                    <rect x="69" y="129" width="120" height="120" fill="#D9D9D9" fill-opacity="0.5"/>
-                    <rect x="259" y="229" width="120" height="120" fill="#D9D9D9" fill-opacity="0.5"/>
-                    <rect x="69" y="329" width="120" height="120" fill="#D9D9D9" fill-opacity="0.5"/>
-                    <rect x="327" y="429" width="120" height="120" fill="#D9D9D9" fill-opacity="0.5"/>
+                <g class="icons-template">
+                    <rect x="329" y="29" width="120" height="120" fill="#D9D9D9" fill-opacity="0" data-icon="excel"/>
+                    <rect x="69" y="129" width="120" height="120" fill="#D9D9D9" fill-opacity="0" data-icon="powerpoint"/>
+                    <rect x="259" y="229" width="120" height="120" fill="#D9D9D9" fill-opacity="0" data-icon="mail"/>
+                    <rect x="69" y="329" width="120" height="120" fill="#D9D9D9" fill-opacity="0"data-icon="word"/>
+                    <rect x="327" y="429" width="120" height="120" fill="#D9D9D9" fill-opacity="0"data-icon="pdf"/>
                 </g>
                 <g class="logo">
                     <rect x="681" y="229" width="130" height="130" rx="19.5" fill="#5C3FDD"/>
@@ -64,8 +64,16 @@
                 </g>
             </svg>
             <div class="right-side">
-                <img src="./img/dashboard.png" alt="dashboard">
-            </div>                 
+                <img class="visible" src="./img/dashboard.png" alt="dashboard">
+                <img src="./img/dashboard-2.png" alt="dashboard-2">
+            </div>
+            <div class="icons">
+                <img src="./img/excel.png" alt="" data-icon="excel">
+                <img src="./img/powerpoint.png" alt="" data-icon="powerpoint">
+                <img src="./img/mail.png" alt="" data-icon="mail">
+                <img src="./img/word.png" alt="" data-icon="word">
+                <img src="./img/pdf.png" alt="" data-icon="pdf">
+            </div>               
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
