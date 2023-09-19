@@ -42,10 +42,6 @@ section {
     transition: filter 0.3s ease;
 }
 
-.logo.up {
-    filter: drop-shadow(0 20px 16px rgba(17 17 20 / 8%));
-}
-
 .right-side {
     position: relative;
 }
@@ -57,7 +53,7 @@ section {
     max-height: 588px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.8s ease-in 0.4s, visibility 0.8s ease-in 0.4s;
+    transition: opacity 0.8s ease-in 0.55s, visibility 0.8s ease-in 0.55s;
 }
 
 .right-side img:nth-child(2),
@@ -91,7 +87,8 @@ section {
 
 .stroke-anim.animate {
     animation-name: strokePath;
-    animation-duration: 1.2s;
+    animation-delay: 0.2s;
+    animation-duration: 1.1s;
     animation-iteration-count: 1;
     animation-timing-function:cubic-bezier(0.47, 0, 0.745, 0.715)
 }
@@ -107,5 +104,27 @@ section {
 
     100% {
         stroke-dashoffset: 140;
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    .container--visual {
+        flex-direction: column;
+        max-height: 100%;
+    }
+
+    .left-side {
+        width: 100%;
+        transform: rotate(90deg);
+    }
+
+    .left-side .logo {
+        transform: none !important;
+    }
+
+    .left-side .logo path {
+        transform-origin: center;
+        transform-box: fill-box;
+        transform: rotate(-90deg);
     }
 }

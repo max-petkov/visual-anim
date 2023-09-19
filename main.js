@@ -8,8 +8,10 @@ function visualBuiltAI() {
   const icons = document.querySelectorAll(".icons [data-icon]");
 
   setPosition(icons, svg);
+  spacingFix(svg, imgs);
   onResize(function() {
     setPosition(icons, svg);
+    spacingFix(svg, imgs);
   });
 
   animateIcons();
@@ -86,7 +88,6 @@ function visualBuiltAI() {
             else imgs[0].classList.add("visible");
 
             visibleImage.classList.remove("visible");
-            logo.classList.add("up");
 
             const strokeAnim = document.querySelector(".stroke-anim");
             strokeAnim.classList.add("animate");
@@ -138,4 +139,15 @@ function setPosition(imgs, svg) {
       img.style.width = getRect(path).width + "px";
       img.style.height = getRect(path).height + "px";
   });
+}
+
+function spacingFix(svg, imgs) {
+  if(window.innerWidth <= 475) {
+    gsap.set(svg, {clearProps: "all"})
+    const bottom = svg.getBoundingClientRect().bottom;
+    const top = imgs[0].getBoundingClientRect().top;
+    const mb = Math.abs((bottom - top) - 4);
+
+    gsap.set(svg, {marginBottom: mb})
+  } else gsap.set(svg, {clearProps: "all"});
 }
