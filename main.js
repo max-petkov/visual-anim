@@ -6,7 +6,6 @@ function visualBuiltAI() {
   const circles = document.querySelectorAll(".masked-lines .circle");
   const imgs = document.querySelectorAll(".right-side img");
   const icons = document.querySelectorAll(".icons [data-icon]");
-  let complete = 0;
 
   setPosition(icons, svg);
   onResize(function() {
@@ -22,7 +21,8 @@ function visualBuiltAI() {
   function animateIcons() {
     const tl = gsap.timeline();
 
-    tl.fromTo(icons, {autoAlpha:0}, {autoAlpha: 1});
+    tl.fromTo(icons, {autoAlpha: 0}, { autoAlpha: 1});
+
     return tl;
   }
   
@@ -38,6 +38,7 @@ function visualBuiltAI() {
             },
           },
           {
+            ease: Power1.easeOut,
             autoAlpha: 1,
             stagger: config.stagger,
             attr: {
@@ -74,15 +75,30 @@ function visualBuiltAI() {
           autoAlpha: 0,
         }, "<70%")
         .to(logo, {
-          y: -10, 
-          duration: 1.2, 
-          ease: Back.easeOut.config(1.6),
-          onComplete: function(){
-            complete++
-            imgs.forEach(img => img.classList.toggle("visible"));
+          y: -2,
+          duration: 0.3, 
+          ease: Power3.easeInOut,
+          onStart: () => {
+            const visibleImage = document.querySelector(".right-side img.visible");
+            const nextImage = visibleImage.nextElementSibling;
+
+            if(nextImage) nextImage.classList.add("visible");
+            else imgs[0].classList.add("visible");
+
+            visibleImage.classList.remove("visible");
+            logo.classList.add("up");
+
+            const strokeAnim = document.querySelector(".stroke-anim");
+            strokeAnim.classList.add("animate");
+
+            setTimeout(() => strokeAnim.classList.remove("animate"), 1250)
+
+            
           },
-        }, "-=1.05")
-        .to(logo, {y: 0, duration: 0.8, ease: Back.easeOut.config(1.2)});
+          onComplete: () => {
+            gsap.to(logo, {y: 0, ease: Power3.easeIn, duration: 0.3});
+          }
+        }, "-=1.1")
     return tl;
   }
 }
